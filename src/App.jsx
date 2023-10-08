@@ -1,22 +1,69 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import { Button } from './components/buttons/Button';
-import { Background } from './components/background/Background';
-import { Silhuette } from './components/silhuette/Silhuette';
-import styles from './homepage.module.scss';
 import { Home } from './pages/home/Home';
+import About from './pages/about/About';
 import Sidebar from './components/sidebar/Sidebar';
+import MenuBtn from './components/menuBtn/MenuBtn';
+import { AnimatePresence } from 'framer-motion';
+import Nav from './components/nav/Nav';
+import NavItem from './components/nav/NavItem';
+import { navData } from './assets/constants/NavData';
+
+// styles
+import './App.scss';
 
 function App() {
+  const [active, setActive] = useState(false);
+
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <>
+    <main>
       <Router>
+        <MenuBtn active={active} setActive={setActive} />
+        <AnimatePresence mode='wait'>
+          {active && (
+            <Nav active={active} setActive={setActive}>
+              {navData.map(({ title, path, cls, id }, i) => (
+                <NavItem
+                  title={title}
+                  path={path}
+                  cls={cls}
+                  key={id}
+                  i={i}
+                  active={active}
+                  setActive={setActive}
+                />
+              ))}
+            </Nav>
+          )}
+        </AnimatePresence>
         <Sidebar />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
         </Routes>
       </Router>
-    </>
+      <div className='scrolling'>
+        {scrollY > 500
+          ? 'Scrolled more than 500px'
+          : 'Still somewhere near the top!'}
+      </div>
+    </main>
   );
 }
 

@@ -7,7 +7,7 @@
   border-radius: 5px;
   padding: 0.75rem 1rem;
   font-size: $font-size-base;
-  font-family: $font-base;
+  font-family: $font-headline;
   background: $color-c-4;
   border: none;
   z-index: 1;
@@ -18,6 +18,8 @@
   box-shadow: inset 2px 2px 2px 0px rgba(7, 7, 7, 0.5),
     7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
+  border: 2px solid black;
+  filter: drop-shadow(10px 10px 10px rgb(0, 0, 0));
 
   &:first-letter {
     text-transform: uppercase;
