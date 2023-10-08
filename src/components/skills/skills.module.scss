@@ -1,4 +1,4 @@
-.card-container {
+.card_container {
   display: grid;
   grid-gap: 0.1rem;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -7,6 +7,7 @@
   margin: 0 auto;
   z-index: 1;
   overflow: hidden;
+  filter: drop-shadow(10px 10px 10px rgb(0, 0, 0));
   
 
   @media (min-width: 768px) {
@@ -34,20 +35,20 @@
   object-fit: cover;
 }
 
-.card-inner {
+.card_inner {
   height: 100%;
   width: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
-.card:hover .card-inner,
-.card:active .card-inner {
+.card:hover .card_inner,
+.card:active .card_inner {
   transform: rotateY(180deg);
 }
 
-.card-front,
-.card-back {
+.card_front,
+.card_back {
   position: absolute;
   height: 100%;
   -webkit-backface-visibility: hidden;
@@ -55,7 +56,7 @@
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
 }
 
-.card-back {
+.card_back {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
