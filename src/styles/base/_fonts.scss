@@ -1,0 +1,30 @@
+ 
+  @font-face {
+    font-family: SourcePro;
+    src: url('../assets/fonts/SourceSansPro-Regular.otf');
+  }
+
+  @font-face {
+    font-family: PriceDown;
+    src: url('../assets/fonts/pricedown.otf');
+  }
+
+  $font-base: SourcePro;
+  $font-headline: PriceDown;
+
+  // font-sizes
+$font-size-s: clamp(0.75rem, 1.5vw, 1rem);
+$font-size-base: clamp(1rem, 2vw, 1.25rem);
+$font-size-m: 1.25rem;
+$font-size-ml: 1.5rem;
+$font-size-l: 2rem;
+$font-size-xl: 3rem;
+$font-size-xxl: 4.5rem;
+$font-size-xxxl: clamp(2.5rem, 0.9063rem + 4.5vw, 4.5rem);
+
+// font weight
+$font-normal: 400;
+$font-medium: 600;
+$font-bold: 800;
+
+
