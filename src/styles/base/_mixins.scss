@@ -1,13 +1,13 @@
 // scrollbar
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, rgb(27, 27, 27),  50%)) {
+@mixin scrollbar($size, $foreground-color, $background-color: mix($foreground-color, rgb(27, 27, 27),  50%)) {
     // For Google Chrome
     &::-webkit-scrollbar {
       width:  $size;
-      height: $size;
     }
   
     &::-webkit-scrollbar-thumb {
       background: $foreground-color;
+      height: 20px;
     }
   
     &::-webkit-scrollbar-track {
@@ -21,36 +21,3 @@
     }
   }
 
-  @mixin font-responsive($max, $min, $important: false) {
-    $minViewport: 768px;
-    $maxViewport: 1440px;
-
-    $minViewportRem: math.div($minViewport, $rem-base-font) * 1rem;
-    $maxViewportRem: math.div($maxViewport, $rem-base-font) * 1rem;
-
-    $minRem: math.div($min, $rem-base-font) * 1rem;
-    $maxRem: math.div($max, $rem-base-font) * 1rem;
-
-    $responsiveSize: calc(
-        #{$minRem} + #{math.div($maxRem - $minRem, 1rem)} *
-            ((100vw - #{$minViewportRem}) / #{math.div($maxViewportRem - $minViewportRem, 1rem)})
-    );
-
-    @if ($important) {
-        font-size: $minRem !important;
-        @media screen and (min-width: $minViewport) {
-            font-size: $responsiveSize !important;
-        }
-        @media screen and (min-width: $maxViewport) {
-            font-size: $maxRem !important;
-        }
-    } @else {
-        font-size: $minRem;
-        @media screen and (min-width: $minViewport) {
-            font-size: $responsiveSize;
-        }
-        @media screen and (min-width: $maxViewport) {
-            font-size: $maxRem;
-        }
-    }
-}

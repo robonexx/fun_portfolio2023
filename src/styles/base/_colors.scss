@@ -1,6 +1,11 @@
 
 // colors
 
+$color-c-1: #f5af19;
+$color-c-2: #D8BAFF;
+$color-c-3: #FF9E68;
+$color-c-4: #f12711;
+
 $color-1: #ffffff;
 $color-2: #e4e4df;
 $color-3: #b9b4b1;
@@ -32,4 +37,5 @@ $color-gradient-gold: linear-gradient(120deg, #BF953F, #FCF6BA, #B38728, #FBF5B7
 $color-gradient-purplish: linear-gradient(120deg, #574650, #E6D5DF, #61505A, #DDCCD6, #6F5E68);
 $color-gradient-black: linear-gradient(120deg, $color-5, $color-text-secondary, $color-bg-dark, $color-5, $color-text-secondary);
 $color-gradient-white: linear-gradient(120deg, $color-1, $color-2, $color-1, $color-3, $color-2);
+$color-gradient-sun: linear-gradient(to right, #f12711, #f5af19);
 

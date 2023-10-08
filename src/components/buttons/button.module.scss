@@ -1,0 +1,62 @@
+@use '../../styles/base/' as *;
+
+.btn {
+  border: none;
+  color: #000;
+  margin: 20px;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  font-size: $font-size-base;
+  font-family: $font-base;
+  background: $color-c-4;
+  border: none;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(7, 7, 7, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.btn:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+
+.btn::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 5px;
+  background-color: $color-c-1;
+  background-image: $color-gradient-sun;
+  box-shadow: inset 2px 2px 2px 0px rgba(41, 40, 40, 0.5) 7px 7px 20px 0px
+      rgba(0, 0, 0, 0.1),
+    4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active::after {
+  transform: translateY(0px);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}

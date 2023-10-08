@@ -1,12 +1,12 @@
  
   @font-face {
     font-family: SourcePro;
-    src: url('../assets/fonts/SourceSansPro-Regular.otf');
+    src: url('/src/assets//fonts/SourceSansPro-Regular.otf');
   }
 
   @font-face {
     font-family: PriceDown;
-    src: url('../assets/fonts/pricedown.otf');
+    src: url('/src/assets//fonts/pricedown.otf');
   }
 
   $font-base: SourcePro;

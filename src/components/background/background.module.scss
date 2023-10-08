@@ -1,0 +1,123 @@
+@use '../../styles/base/' as *;
+
+.background {
+    margin: 15% auto;
+    width: 90%;
+    height: 80%;
+    position: relative;
+    display: block;
+
+    @media (min-width: 768px) {
+        margin: 5% auto;
+        width: 80%;
+        height: 80%;
+    }
+
+    h2 {
+        position: absolute;
+        top: -8%;
+        font-family: $font-headline;
+        font-size: $font-size-xxl;
+        -webkit-text-stroke: 2px $color-c-2;
+        color: transparent;
+        text-shadow: 1px 1px 2px black, -1px -1px 2px black;
+    }
+
+    .piece1{
+        position: absolute;
+        top: 0vh;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgb(228, 224, 224);
+       
+        clip-path: polygon(0 0, 48% 0, 70% 50%, 35% 65%);
+        overflow: hidden;
+
+        > .bgimg {
+            width: 100%;
+            height: 100%;
+            background-image: url('/src/assets/images/sanches.png');
+            background-repeat: no-repeat;
+            background-size: 80% 70%;
+            background-position: top left;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .piece2 {
+        position: absolute;
+        top: 0vh;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: rgb(13, 14, 13);
+        clip-path: polygon(0 0, 32% 69%, 65% 100%, 0 100%);
+        overflow: hidden;
+
+        > .bgimg {
+            margin-right: 10vw;
+            width: 100%;
+            height: 100%;
+            background-image: url('/src/assets/images/el.png');
+            background-repeat: no-repeat;
+            background-size: 70% 70%;
+            background-position: bottom left;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+   
+    .piece3 {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: auto;
+        height: 100%;
+        width: 100%;
+        background: rgb(0, 0, 0);
+        clip-path: polygon(51% 0, 98% 0, 100% 56%, 71% 46%);
+        overflow: hidden;
+
+        > .bgimg {
+            margin-left: 10vw;
+            width: 100%;
+            height: 100%;
+            background-image: url('/src/assets/images/thunder.png');
+            background-repeat: no-repeat;
+            background-size: 60% 60%;
+            background-position: top right;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .piece4 {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: auto;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: rgb(0, 0, 0);
+        clip-path: polygon(68% 55%, 100% 63%, 99% 97%, 72% 99%, 41% 70%);    
+        overflow: hidden;
+
+        > .bgimg {
+            margin-top: 20vh;
+            margin-left: 10vw;
+            width: 100%;
+            height: 100%;
+            background-image: url('/src/assets/images/lyka.png');
+            background-repeat: no-repeat;
+            background-size: 70% 80%;
+            background-position: bottom right;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    
+}
