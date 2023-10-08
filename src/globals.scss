@@ -69,9 +69,14 @@ input{
 
 // creatint p - h1 and adding the styles accordingly
 
+.largest {
+  padding: 2rem;
+  font-size: $font-size-xxxl;
+}
+
 h1 {
   padding: 2rem 0;
-  font-size: $font-size-xxxl;
+  font-size: $font-size-xxl;
   font-family: $font-headline;
 }
 
