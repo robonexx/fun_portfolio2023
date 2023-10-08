@@ -1,0 +1,45 @@
+@use '../../styles/base/' as *;
+
+.sidebar {
+    position: fixed;
+    left: 2vw;
+    top: 60vh;
+    width: 46px;
+    z-index: 50;
+    display: flex;
+    
+    @media (max-width: 768px) {
+        visibility: hidden;
+         }
+}
+.sidebar .social {
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    height: fit-content;
+    transition: all .3s ease-in-out 0s; 
+  }
+  
+  .sidebar .social .soc-item {
+    margin: 0.75rem 1rem;
+  }
+  
+  .sidebar .social .soc-icon {
+    z-index: 19;
+    color: #c4c3c3;
+    filter: drop-shadow(2px 1px 2px rgba(25, 27, 26, 0.733));  
+    width: 32px;
+    height: 32px;
+    padding: 0.25rem;
+    transition: transform .3s ease-in-out, color .2s ease, filter 0.5s ease-in-out;
+
+   &:hover {
+    color: #fff;
+    filter: drop-shadow(2px 1px 2px rgba(224, 40, 8, 0.733));
+   }
+
+    @media (max-width: 768px) {
+      width: 26px;
+      height: 26px;
+       }  
+  }
