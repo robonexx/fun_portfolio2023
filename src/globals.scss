@@ -15,8 +15,6 @@ html, body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- /*  overflow-x: hidden; */
-  background: $color-bg;
 }
  body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video{
   margin: 0;
@@ -37,7 +35,7 @@ article, aside, details, figcaption, figure, footer, header, nav, section, main{
 }
 
 body{
-  line-height: 1;
+  line-height: 1.4;
   @include scrollbar(10px, #e05e12, $color-scrollbar-bg);
 }
 
@@ -76,13 +74,25 @@ input{
 }
 
 h1 {
+  position: relative;
   padding: 2rem 0;
   font-size: $font-size-xxl;
   font-family: $font-headline;
+  z-index: 2;
+}
+
+h2 {
+  position: relative;
+  padding: 2rem 0;
+  font-size: $font-size-xl;
+  font-family: $font-base;
+  z-index: 2;
 }
 
 p {
+  position: relative;
   padding: 1rem 0;
   font-size: $font-size-base;
   font-family: $font-base;
+  z-index: 2;
 }

@@ -1,0 +1,33 @@
+@use '../../styles/base' as *;
+
+.hero {
+    margin: 0 auto;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-headline;
+
+    
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+
+        .profile {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        p {
+            font-size: inherit;
+            color: $color-5;
+            position: absolute;
+            top: 15vh;
+            left: 2rem;
+        }
+    }      

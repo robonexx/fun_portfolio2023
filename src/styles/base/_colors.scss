@@ -24,9 +24,6 @@ $color-client-1: #fff;
 $color-client-2: #888;
 $color-client-3: #000;
 
-$color-bg: #1d1b1b;
-$color-bg-light: #e1dedc;
-
 
 // color scrollbar
 $color-scrollbar-bg: $color-5;
@@ -38,5 +35,6 @@ $color-gradient-gold: linear-gradient(120deg, #BF953F, #FCF6BA, #B38728, #FBF5B7
 $color-gradient-purplish: linear-gradient(120deg, #574650, #E6D5DF, #61505A, #DDCCD6, #6F5E68);
 $color-gradient-black: linear-gradient(120deg, $color-5, $color-text-secondary, $color-bg-dark, $color-5, $color-text-secondary);
 $color-gradient-white: linear-gradient(120deg, $color-1, $color-2, $color-1, $color-3, $color-2);
-$color-gradient-sun: linear-gradient(to right, #f12711, #f5af19);
+$color-gradient-sun: linear-gradient(to right, #eb2b16, #f5af19);
+$color-gradient-sun-dark: linear-gradient(to right, #e06d2a, #e9c31a);
 

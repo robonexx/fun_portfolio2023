@@ -1,27 +1,35 @@
 @use './colors' as *;
 
 .lightmode {
-    background-color: $color-bg-alt;
+    background-color: $color-bg-light;
     color: $color-1;
     transition: all 0.5s ease-in-out;
 
     h1 {
-        color: $color-1;
+        color: $color-5;
     }
 
     h2 {
-        color: $color-2
+        color: $color-4
     }
 
     p {
-        color: $color-p;
+        color: $color-4;
     }
 
-    .card {
+    ~ .soc-icon {
+        color: $color-client-3;
+    }
+
+    .title {
+        background-image: $color-gradient-sun;
+    }
+
+   /*  .card {
         background-color: $color-card-bg;
         color: $color-2;
     }
-
+ */
 
     /* a {
         color: $color-link;
@@ -36,31 +44,31 @@
 }
 
 .darkmode {
-
-    background-color: $color-dark-bg-alt;
-    color: $color-dark-1;
+    background-color: $color-bg-dark;
+    color: $color-client-1;
     transition: all 0.5s ease-in-out;
 
     h1 {
-        color: $color-dark-1;
+        color: $color-1;
     }
 
     h2 {
-        color: $color-dark-1;
+        color: $color-1;
     }
 
     p {
-        color: $color-dark-p;
+        color: $color-1;
     }
 
-    .card {
+    .title {
+        background-image: $color-gradient-sun-dark;
+    }
+
+    /* .card {
         background-color: $color-card-dark-bg;
         color: $color-dark-2;
-    }
+    } */
 
-    .post_container {
-        background-color: $color-card-dark-bg;
-    }
 /* 
     a {
         color: $color-link-dark;

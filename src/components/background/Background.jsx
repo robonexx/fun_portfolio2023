@@ -3,7 +3,7 @@ import styles from './background.module.scss';
 export const Background = () => {
   return (
     <div className={styles.background}>
-      <h2>Art By Rob</h2>
+      <h2 className='bgtitle'>Art By Rob</h2>
       <div className={styles.piece1}>
         <div className={styles.bgimg}></div>
       </div>

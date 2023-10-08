@@ -11,9 +11,11 @@ import { navData } from './assets/constants/NavData';
 
 // styles
 import './App.scss';
+import Theme from './components/theme/Theme';
 
 function App() {
   const [active, setActive] = useState(false);
+  const [lights, setLights] = useState(true);
 
   const [scrollY, setScrollY] = useState(0);
 
@@ -32,8 +34,10 @@ function App() {
   }, []);
 
   return (
-    <main>
+    <main className={lights ? 'main lightmode' : 'main darkmode'}>
+      <div className={lights ? 'overlay' : 'overlay dark'}></div>
       <Router>
+        <Theme lights={lights} setLights={setLights} />
         <MenuBtn active={active} setActive={setActive} />
         <AnimatePresence mode='wait'>
           {active && (
@@ -57,12 +61,12 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
         </Routes>
+        <div className='scrolling'>
+          {scrollY > 500
+            ? 'Scrolled more than 500px'
+            : 'Still somewhere near the top!'}
+        </div>
       </Router>
-      <div className='scrolling'>
-        {scrollY > 500
-          ? 'Scrolled more than 500px'
-          : 'Still somewhere near the top!'}
-      </div>
     </main>
   );
 }
