@@ -1,7 +1,8 @@
 .main {
     position: relative;
-    width: 100%;
+    max-width: 100svw;
     height: 100%;
+    overflow-x: hidden;
 
     .overlay {
       position: absolute;
