@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-// styles
 import styles from './navItem.module.scss';
 
 // eslint-disable-next-line react/prop-types
-const NavItem = ({ title, path, id, img, i, closeMobileMenu }) => {
+const NavItem = ({ title, path, id, i, closeMobileMenu }) => {
   return (
     <motion.li
       className={styles.nav_item}
@@ -14,11 +13,16 @@ const NavItem = ({ title, path, id, img, i, closeMobileMenu }) => {
       transition={{ duration: 0.8, delay: i * 0.1 }}
       onClick={closeMobileMenu}
     >
-      <div className={styles.img}>
-        <img alt={title} src={img} />
-      </div>
-      <Link to={path}>
-        <span className={styles.nav_link}>{title}</span>
+      <Link to={path} className={styles.nav_link}>
+        <div className={styles.btn}>
+          <p>
+            <span>{title}</span>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+          </p>
+        </div>
       </Link>
     </motion.li>
   );

@@ -1,0 +1,32 @@
+@use '../../styles/base/' as *;
+
+.text_wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 200%;
+  max-height: 5rem;
+  padding: 0.25rem 0;
+  background-color: $color-c-6;
+
+  .text {
+    display: inline-block;
+    width: 100%; 
+    transform: translateX(0);
+    animation: move 30s linear infinite;
+    color: white;
+    font-family: $font-headline;
+    font-size: $font-size-xl;
+    letter-spacing: 2px;
+}
+
+  @keyframes move {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}

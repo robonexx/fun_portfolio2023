@@ -1,22 +1,33 @@
 
 // colors
 
-$color-c-1: #f5af19;
-$color-c-2: #D8BAFF;
-$color-c-3: #FF9E68;
-$color-c-4: #f12711;
+$color-header-bg: #ffec9c;
+$color-blue: #2444a3;
+
+$color-c-1: #fed829;
+$color-c-2: #fd80db;
+$color-c-3: #8617c0;
+$color-c-4: #340181;
+$color-c-5: #fefefe;
+$color-c-6: #fb6342;
 
 $color-1: #ffffff;
 $color-2: #e4e4df;
 $color-3: #b9b4b1;
 $color-4: #63615d;
 $color-5: #2a2622;
-$color-bg-dark: #121212;
+
+
+$color-bg-dark: #2b2a28;
 $color-bg-dark-alt: #1d1b1b;
-$color-bg-light: #efefef;
+$color-text-dark: #e4e4df;
+
+$color-bg-light: #ffec9c;
 $color-bg-light-alt: #fff;
-$color-text-primary: #f8f8f8;
-$color-text-secondary: #121212;
+$color-text-light: #010101;
+
+
+
 
 
 // colors client
@@ -33,7 +44,7 @@ $color-li-arrow: #61505A;
 // color gradients
 $color-gradient-gold: linear-gradient(120deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
 $color-gradient-purplish: linear-gradient(120deg, #574650, #E6D5DF, #61505A, #DDCCD6, #6F5E68);
-$color-gradient-black: linear-gradient(120deg, $color-5, $color-text-secondary, $color-bg-dark, $color-5, $color-text-secondary);
+$color-gradient-black: linear-gradient(120deg, $color-5, $color-text-light, $color-bg-dark, $color-5, $color-text-light);
 $color-gradient-white: linear-gradient(120deg, $color-1, $color-2, $color-1, $color-3, $color-2);
 $color-gradient-sun: linear-gradient(to right, #eb2b16, #f5af19);
 $color-gradient-sun-dark: linear-gradient(to right, #e06d2a, #e9c31a);

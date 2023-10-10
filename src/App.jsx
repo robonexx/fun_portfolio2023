@@ -12,6 +12,7 @@ import { navData } from './assets/constants/NavData';
 // styles
 import './App.scss';
 import Theme from './components/theme/Theme';
+import Header from './components/header/Header';
 
 function App() {
   const [active, setActive] = useState(false);
@@ -37,6 +38,7 @@ function App() {
     <main className={lights ? 'main lightmode' : 'main darkmode'}>
       <div className={lights ? 'overlay' : 'overlay dark'}></div>
       <Router>
+        <Header />
         <Theme lights={lights} setLights={setLights} />
         <MenuBtn active={active} setActive={setActive} />
         <AnimatePresence mode='wait'>

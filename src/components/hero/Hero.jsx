@@ -1,4 +1,4 @@
-import SideScroll from '../sidescroll/SideScroll'
+/* import SideScroll from '../sidescroll/SideScroll' */
 // styles
 import './Hero.scss'
 
@@ -9,7 +9,8 @@ const Hero = ({lights}) => {
 
     return (
         <div className='hero'>
-            <SideScroll />                
+            {/* <SideScroll /> */}  
+           
         </div>
     )
 }
