@@ -1,12 +1,10 @@
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { useSpring, animated } from 'react-spring';
-
+import { motion, useAnimation } from 'framer-motion';
 import styles from './theme.module.scss';
 
 // eslint-disable-next-line react/prop-types
 export default function Theme({ lights, setLights }) {
-  const { x } = useSpring({ duration: 600, x: lights ? 1 : 0 });
+  const controls = useAnimation();
   const themeRef = useRef();
 
   const toggleLights = () => {
@@ -18,7 +16,7 @@ export default function Theme({ lights, setLights }) {
       let prevScrollpos = window.scrollY;
 
       const handleScroll = () => {
-        let currentScrollPos = window.scollY;
+        let currentScrollPos = window.scrollY;
 
         if (prevScrollpos > currentScrollPos) {
           themeRef.current.classList.remove(`${styles.hide}`);
@@ -27,12 +25,17 @@ export default function Theme({ lights, setLights }) {
         }
         prevScrollpos = currentScrollPos;
       };
-      window.addEventListener(`${styles.scroll}`, handleScroll);
+      window.addEventListener('scroll', handleScroll);
       return () => {
-        window.removeEventListener(`${styles.scroll}`, handleScroll);
+        window.removeEventListener('scroll', handleScroll);
       };
     }
   }, []);
+
+  useEffect(() => {
+    controls.start({ x: lights ? 1 : 0 });
+  }, [lights, controls]);
+
   return (
     <motion.div className={styles.theme} ref={themeRef}>
       <div className={styles.lamp_container}>
@@ -85,29 +88,23 @@ export default function Theme({ lights, setLights }) {
               </radialGradient>
             </defs>
           </svg>
-          <svg
+          <motion.svg
             onClick={toggleLights}
             className={styles.light}
             fill={lights ? '#121212' : '#e9c915'}
             xmlns='http://www.w3.org/2000/svg'
           >
-            <animated.path
-              d={x.to({
-                range: [0, 1],
-                output: [
-                  'M103.547 48.7736C103.547 75.2207 80.511 96.6604 52.0943 96.6604C23.6777 96.6604 0.64151 75.2207 0.64151 48.7736C0.64151 22.3264 23.6777 0.88678 52.0943 0.88678C80.511 0.88678 103.547 22.3264 103.547 48.7736Z',
-                  'M104.547 48.7736C110 57 81.511 35 53.0944 35C24.6777 35 -6 59 1.64152 48.7736C1.64152 22.3264 24.6777 0.88678 53.0944 0.88678C81.511 0.88678 104.547 22.3264 104.547 48.7736Z',
-                ],
-              })}
+            <motion.path
+              d='M103.547 48.7736C103.547 75.2207 80.511 96.6604 52.0943 96.6604C23.6777 96.6604 0.64151 75.2207 0.64151 48.7736C0.64151 22.3264 23.6777 0.88678 52.0943 0.88678C80.511 0.88678 103.547 22.3264 103.547 48.7736Z'
+              animate={{
+                d: lights
+                  ? 'M104.547 48.7736C110 57 81.511 35 53.0944 35C24.6777 35 -6 59 1.64152 48.7736C1.64152 22.3264 24.6777 0.88678 53.0944 0.88678C81.511 0.88678 104.547 22.3264 104.547 48.7736Z'
+                  : 'M103.547 48.7736C103.547 75.2207 80.511 96.6604 52.0943 96.6604C23.6777 96.6604 0.64151 75.2207 0.64151 48.7736C0.64151 22.3264 23.6777 0.88678 52.0943 0.88678C80.511 0.88678 103.547 22.3264 103.547 48.7736Z',
+              }}
             />
-          </svg>
+          </motion.svg>
         </div>
       </div>
     </motion.div>
   );
 }
-
-/* const Light_path= [
-      'M104.547 48.7736C110 57 81.511 35 53.0944 35C24.6777 35 -6 59 1.64152 48.7736C1.64152 22.3264 24.6777 0.88678 53.0944 0.88678C81.511 0.88678 104.547 22.3264 104.547 48.7736Z',
-    'M103.547 48.7736C103.547 75.2207 80.511 96.6604 52.0943 96.6604C23.6777 96.6604 0.64151 75.2207 0.64151 48.7736C0.64151 22.3264 23.6777 0.88678 52.0943 0.88678C80.511 0.88678 103.547 22.3264 103.547 48.7736Z'
-    ] */
