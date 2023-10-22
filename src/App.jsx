@@ -8,15 +8,17 @@ import { AnimatePresence } from 'framer-motion';
 import Nav from './components/nav/Nav';
 import NavItem from './components/nav/NavItem';
 import { navData } from './assets/constants/NavData';
-
 // styles
 import './App.scss';
 import Theme from './components/theme/Theme';
 import Header from './components/header/Header';
+import SoundBar from './components/_ui/soundbar/SoundBar';
+import SoundVisualizer from './components/_ui/soundvisualizer/SoundVisualizer';
 
 function App() {
   const [active, setActive] = useState(false);
   const [lights, setLights] = useState(true);
+  const [playMusic, setPlayMusic] = useState(false)
 
   const [scrollY, setScrollY] = useState(0);
 
@@ -58,6 +60,8 @@ function App() {
             </Nav>
           )}
         </AnimatePresence>
+        <SoundVisualizer playMusic={playMusic} />
+        <SoundBar playMusic={playMusic} setPlayMusic={setPlayMusic} />
         <Sidebar />
         <Routes>
           <Route path='/' element={<Home />} />

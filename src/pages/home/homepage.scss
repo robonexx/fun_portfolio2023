@@ -6,7 +6,7 @@
   padding: 0 0.5rem;
 
   @media screen and (min-width: 768px) {
-    padding: 0 6rem;       
+    padding: 0;       
 } 
 }
 
@@ -44,6 +44,7 @@
   font-size: $font-size-xxl;
   background-color: $color-c-4;
   background-size: 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;

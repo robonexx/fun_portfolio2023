@@ -7,7 +7,8 @@ export default function Theme({ lights, setLights }) {
   const controls = useAnimation();
   const themeRef = useRef();
 
-  const toggleLights = () => {
+  const toggleLights = (e) => {
+    e.stopPropagation();
     setLights((prev) => !prev);
   };
 
@@ -89,7 +90,7 @@ export default function Theme({ lights, setLights }) {
             </defs>
           </svg>
           <motion.svg
-            onClick={toggleLights}
+            onClick={(e) => toggleLights(e)}
             className={styles.light}
             fill={lights ? '#121212' : '#e9c915'}
             xmlns='http://www.w3.org/2000/svg'

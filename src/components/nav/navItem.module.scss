@@ -10,7 +10,7 @@
   display: grid;
   place-content: center;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 960px) {
     position: relative;
     padding: 1rem 2rem;
     min-width: calc(100svw / 5);
@@ -38,7 +38,7 @@
       margin-right: 3vw;
       /* other styles for .btn here */
 
-      @media (min-width: 768) {
+      @media (min-width: 960px) {
         margin-right: 0;
       }
 
@@ -47,7 +47,7 @@
         min-width: 60svw;
         height: 4rem;
         border-radius: 5px;
-        border: 2px solid $color-blue;
+       /*  border: 2px solid $color-blue; */
         background-color: $color-bg-light;
         display: grid;
         place-content: center;
@@ -56,7 +56,8 @@
         transform: translateY(-3px) translateX(2px);
         transition: all 0.3s ease-in-out;
 
-        @media (min-width:768px) {
+        @media (min-width: 960px) {
+          min-width: 100%;
           width: 100%;
           height: 3rem;
         }
@@ -83,8 +84,9 @@
           transition: color 0.3s ease-in-out;
           z-index: 5;
 
-          @media (min-width:768px) {
-            font-size: $font-size-l;
+          @media (min-width: 960px) {
+            top: 10%;
+            font-size: $font-size-m;
           }
 
           &:hover {
@@ -139,8 +141,8 @@
       &:hover figure:nth-of-type(3) {
         top: 80px;
         left: 60px;
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         transition: 0.8s ease-out;
       }
 

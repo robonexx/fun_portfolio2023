@@ -26,7 +26,7 @@
   right: 0;
   z-index: 99;
   padding: 0;
-  background-color: $color-1;
+/*   background-color: $color-1; */
   width: 100vw;
   height: 100vh;
   list-style-type: none;
@@ -49,9 +49,9 @@
   transform: translateY(110%);
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
-  -o-transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 
 .nav > .menu.open {
@@ -60,29 +60,26 @@
   transform: translateY(0%);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .nav {
     right: 1rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .nav {
     top: auto;
     bottom: 0vh;
     left: 0;
     right: 0;
-    height: 20vh;
+    height: 22.5vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
     border-radius: 0%;
     z-index: 49;
-  }
-
-  .nav.open {
-    height: 30vh;
+    transition: all 0.3s ease-in-out;
   }
 
   .nav.border {
