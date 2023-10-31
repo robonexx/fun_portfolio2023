@@ -1,0 +1,33 @@
+.talk {
+    position: absolute;
+    width: 400px;
+    height: 380px;   
+    z-index: 50;
+    left: 8vw;
+    top: -5vh;
+    display: grid;
+    place-content: center;
+
+.svg_wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(4px 4px 1px rgb(0, 0, 0));
+
+     svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.text_wrapper {
+    position: absolute;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem 2rem 4rem;
+    z-index: 500;
+}
+}

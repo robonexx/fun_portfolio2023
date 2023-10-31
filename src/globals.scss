@@ -36,7 +36,7 @@ article, aside, details, figcaption, figure, footer, header, nav, section, main{
 
 body{
   line-height: 1.4;
-  @include scrollbar(10px, #e05e12, $color-scrollbar-bg);
+  @include scrollbar(10px, $color-c-1, $color-scrollbar-bg);
 }
 
 ol, ul{
