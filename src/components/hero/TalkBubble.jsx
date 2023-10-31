@@ -1,9 +1,10 @@
 import './talkbubble.scss';
 import TypeWriter from '../typewriter/TypeWriter';
+// eslint-disable-next-line react/prop-types
 const TalkBubble = () => {
   return (
     <div className='talk'>
-      <div className='svg_wrapper'>
+      <div className='svg_wrapper addAnimation'>
         <svg
           width='441'
           height='249'

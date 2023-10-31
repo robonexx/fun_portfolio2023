@@ -52,7 +52,7 @@
         display: grid;
         place-content: center;
         z-index: 1;
-        box-shadow: 5px -5px 0 0 #232428;
+        box-shadow: -5px -5px 0 0 #232428;
         transform: translateY(-3px) translateX(2px);
         transition: all 0.3s ease-in-out;
 
@@ -64,7 +64,7 @@
 
         &:hover {
           text-shadow: 2px 2px orange;
-          box-shadow: 1px -1px 0 0 #232428;
+          box-shadow: -1px -1px 0 0 #232428;
           transform: translateY(-1px) translateX(1px);
         }
 
@@ -82,7 +82,7 @@
           border-radius: 5px;
           text-align: center;
           transition: color 0.3s ease-in-out;
-          z-index: 5;
+          z-index: 102;
 
           @media (min-width: 960px) {
             top: 10%;

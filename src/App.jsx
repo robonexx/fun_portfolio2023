@@ -64,7 +64,7 @@ function App() {
         <SoundBar playMusic={playMusic} setPlayMusic={setPlayMusic} />
         <Sidebar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home audio={playMusic} />} />
           <Route path='/about' element={<About />} />
         </Routes>
         <div className='scrolling'>

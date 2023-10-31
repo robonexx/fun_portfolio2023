@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './typewriter.scss';
 
-const words = [
-  'Hej',
-  'Hello',
-  'Terve',
-  'Hola',
-  'Hi... I`m Rob',
+const phrases = [
+  'Goddagens!',
+  'Tjena kompis',
+  'Terve kaveri',
+  'こんにちは',
+  'Hola Amigo',
+  'Shoo bre',
+  '你好呀... I`m Rob',
   'A Frontend developer based in Stockholm, Sweden',
   'I LIKE CREATING SMART USER INTERFACES & USEFUL INTERACTIONS',
   'RESPONSIVE AND "UP TO DATE" WEBSITES',
   'DEVELOPING RICH WEB EXPERIENCES & APPLICATIONS',
+  'Feel free to check around on my new website 😉',
 ];
 
 const TypeWriter = () => {
@@ -18,35 +21,26 @@ const TypeWriter = () => {
   const [subIndex, setSubIndex] = useState(0);
   const [blink, setBlink] = useState(true);
 
-  // typeWriter
   useEffect(() => {
-    if (index === words.length) return;
+    if (index === phrases.length) return;
 
-    if (subIndex === words[index].length + 1) {
-      // If the word is fully typed
-      if (index === words.length - 1) {
-        // If it's the last word, wait for a delay and then reset to the first word
-        setTimeout(() => {
-          setIndex(0);
-          setSubIndex(0);
-        }, 1000); // You can adjust the delay before resetting
-      } else {
-        // Move to the next word
-        setTimeout(() => {
-          setIndex((prev) => prev + 1);
-          setSubIndex(0);
-        }, 1000); // You can adjust the delay before moving to the next word
+    if (subIndex === phrases[index].length + 1) {
+      if (index === phrases.length - 1) {
+        return;
       }
+
+      setTimeout(() => {
+        setIndex((prev) => prev + 1);
+        setSubIndex(0);
+      }, 1000);
     } else {
-      // Continue typing the current word
       const timeout = setTimeout(() => {
         setSubIndex((prev) => prev + 1);
-      }, 60); // You can adjust the typing speed
+      }, 60);
       return () => clearTimeout(timeout);
     }
   }, [subIndex, index]);
 
-  // blinker
   useEffect(() => {
     const timeout = setTimeout(() => {
       setBlink((prev) => !prev);
@@ -56,7 +50,7 @@ const TypeWriter = () => {
 
   return (
     <h3 className='typewriter'>
-      {`${words[index].substring(0, subIndex)}${blink ? '|' : ' '}`}
+      {`${phrases[index].substring(0, subIndex)}${blink ? '|' : ' '}`}
     </h3>
   );
 };

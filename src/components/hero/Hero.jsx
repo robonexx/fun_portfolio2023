@@ -1,17 +1,18 @@
 import './Hero.scss';
 import IMG from '../../assets/images/hero_img.png';
+import IMGBG from '../../assets/images/sthlm.jpg';
 import TalkBubble from './talkBubble';
 
 // eslint-disable-next-line react/prop-types
-const Hero = ({ lights }) => {
+const Hero = ({ audio }) => {
   /*  lights ? console.log('on') : console.log('off') */
 
   return (
     <div className='hero'>
-      <h2>Hi there I&apos;m Rubadub</h2>
-      {!lights ? <TalkBubble /> : <div></div>}
-
-      <img src={IMG} alt='hero img' />
+      <h1 className={audio ? 'addAnimation' : ''}>Welcome to my world</h1>
+      <TalkBubble />
+      <img src={IMGBG} alt='hero img' className='bgimg' />
+      <img src={IMG} alt='hero img' className={audio ? 'img addAnimationToImg' : 'img '} />
     </div>
   );
 };

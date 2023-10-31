@@ -1,27 +1,45 @@
 .talk {
-    position: absolute;
-    width: 400px;
-    height: 380px;   
-    z-index: 50;
-    left: 8vw;
-    top: -5vh;
-    display: grid;
-    place-content: center;
+  position: fixed;
+  left: 15vw;
+  top: 35vh;
+  z-index: 100;
+  display: grid;
+  place-content: center;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.425));
+  transform: scale(0.6);
 
-.svg_wrapper {
+  @media (min-width: 768px) {
+    position: absolute;
+    left: 20vw;
+    top: 0vh;
+    transform: scale(1);
+  }
+
+  .svg_wrapper {
     position: relative;
     width: 100%;
     height: 100%;
     filter: drop-shadow(4px 4px 1px rgb(0, 0, 0));
+    z-index: 100;
 
-     svg {
-        position: absolute;
-        top: 0;
-        left: 0;
+    @media (min-width: 768px) {
+        width: 100%;
+        height: 100%;
+      }
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: scale(-1, 1);
+
+      @media (min-width: 768px) {
+        transform: scale(1);
+      }
     }
-}
+  }
 
-.text_wrapper {
+  .text_wrapper {
     position: absolute;
     width: 400px;
     display: flex;
@@ -29,5 +47,5 @@
     justify-content: center;
     padding: 3rem 1rem 2rem 4rem;
     z-index: 500;
-}
+  }
 }

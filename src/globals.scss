@@ -96,3 +96,52 @@ p {
   font-family: $font-base;
   z-index: 2;
 }
+
+.addAnimation {
+  animation: glitch 0.5s ease infinite forwards;
+}
+
+.addAnimationToImg {
+  animation: glitchImg 0.5s ease infinite forwards;
+}
+
+.addAnimation {
+  animation: glitch 0.5s ease infinite forwards;
+}
+
+@keyframes glitch {
+  0% {
+          text-shadow: 1px 2px #545353, -2px -1px rgb(0, 0, 0);
+  }
+  25% {
+          text-shadow: -2px -3px #dbdbdb, 1px 1px rgb(241, 216, 132);
+  }
+  50% {
+          text-shadow: 2px -3px #646462, -1px 2px rgb(4, 4, 4);
+  }
+  75% {
+          text-shadow: -4px -2px #cb4ddb, -2px -3px rgb(220, 223, 223);
+  }
+  100% {
+          text-shadow: 3px 1px #558b99, 2px 1px rgb(225, 227, 227);
+  }
+}
+
+@keyframes glitchImg {
+  0% {
+          filter: drop-shadow(1px 2px #545353) drop-shadow(-2px -1px rgb(0, 0, 0));
+  }
+  25% {
+    filter: drop-shadow(-2px -3px #dbdbdb) drop-shadow(1px 1px rgb(241, 216, 132));
+  }
+  50% {
+          filter: drop-shadow(2px -3px #646462) drop-shadow(-1px 2px rgb(4, 4, 4));
+  }
+  75% {
+          filter: drop-shadow( -4px -2px #cb4ddb) drop-shadow(-2px -3px rgb(220, 223, 223));
+  }
+  100% {
+          filter: drop-shadow( 3px 1px #558b99) drop-shadow(2px 1px rgb(225, 227, 227));
+  }
+}
+

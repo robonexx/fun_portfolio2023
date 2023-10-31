@@ -3,8 +3,9 @@
     max-width: 100svw;
     height: 100%;
 
+
     .overlay {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       bottom: 0;
@@ -12,11 +13,12 @@
       width: 100%;
       min-height: 100vh;
       background: transparent;
-      z-index: 1;
+      z-index: 2;
+      pointer-events: none;
     }
 
     .dark {
-      background: #070713c0;
+      background: #080808f6;
     }
   }
 

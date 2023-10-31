@@ -1,12 +1,15 @@
 @use './colors' as *;
 
 .lightmode {
-    background-color: $color-bg-light;
     color: $color-1;
     transition: all 0.5s ease-in-out;
 
+    body {
+        background-color: $color-bg-light;
+    }
+
     h1 {
-        color: $color-5;
+        color: $color-c-2 !important;
     }
 
     h2 {
@@ -44,9 +47,12 @@
 }
 
 .darkmode {
-    background-color: $color-bg-dark;
     color: $color-client-1;
     transition: all 0.5s ease-in-out;
+
+    body {
+        background-color: $color-bg-dark;
+    }
 
     h1 {
         color: $color-1;
