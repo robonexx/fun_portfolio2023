@@ -1,4 +1,4 @@
-import { Background } from '../../components/background/Background';
+/* import { Background } from '../../components/background/Background'; */
 import { Button } from '../../components/buttons/Button';
 import { Silhuette } from '../../components/silhuette/Silhuette';
 import Hero from '../../components/hero/Hero';
@@ -20,7 +20,7 @@ export const Home = () => {
         <Button title='Check my work' />
       </section>
       <section className='section'>
-        <Background />
+        {/* <Background /> */}
       </section>
       <section className='section'>
         <Silhuette />

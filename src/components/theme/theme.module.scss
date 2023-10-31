@@ -38,6 +38,7 @@
     }
     .lamp {
       position: relative;
+      z-index: 49;
       @media screen and (max-width: 768px) {
         position: absolute;
         top: 0;
@@ -50,6 +51,7 @@
     }
     .light {
       position: absolute;
+      z-index: 50;
       border: 6px solid transparent;
       top: 45%;
       left: 40%;
@@ -62,7 +64,7 @@
     #radial {
       transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       :nth-child(1) {
-        stop-color: #dcce50;
+        stop-color: #d3cb7fe0;
         stop-opacity: 0.6;
       }
       :nth-child(2) {
