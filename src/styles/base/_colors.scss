@@ -47,5 +47,5 @@ $color-gradient-purplish: linear-gradient(120deg, #574650, #E6D5DF, #61505A, #DD
 $color-gradient-black: linear-gradient(120deg, $color-5, $color-text-light, $color-bg-dark, $color-5, $color-text-light);
 $color-gradient-white: linear-gradient(120deg, $color-1, $color-2, $color-1, $color-3, $color-2);
 $color-gradient-sun: linear-gradient(to right, #eb2b16, #f5af19);
-$color-gradient-sun-dark: linear-gradient(to right, #e06d2a, #e9c31a);
+$color-gradient-sun-dark: linear-gradient(to right, $color-c-6, #e2b332);
 

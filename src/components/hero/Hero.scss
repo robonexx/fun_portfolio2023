@@ -3,10 +3,10 @@
 .hero {
     position: relative;
     font-family: $font-headline;
-    height: 100vh;
+    height: calc(100vh - 5rem);
     
   @media screen and (max-width: 768px) {
-    width: 100%;
+    width: 100vh;
   }
 
   h2 {
@@ -14,7 +14,13 @@
     font-family: $font-headline;
   }
 
-
+  > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-height: 100%;
+    max-width: 50%;
+  }
         .profile {
             position: absolute;
             top: 0;
