@@ -1,7 +1,7 @@
 import './Hero.scss';
 import IMG from '../../assets/images/hero_img.png';
 import IMGBG from '../../assets/images/sthlm.jpg';
-import TalkBubble from './talkBubble';
+import TalkBubble from './TalkBubble';
 
 // eslint-disable-next-line react/prop-types
 const Hero = ({ audio }) => {
