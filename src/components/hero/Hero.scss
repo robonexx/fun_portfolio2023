@@ -33,17 +33,18 @@
 
   .img {
     position: absolute;
+    object-fit: cover;
     left: 0;
     top: auto;
     bottom: 0;
     height: 60%;
-    max-width: 30%;
+    max-width: 100%;
     z-index: 1;
     filter: drop-shadow(10px 10px 10px rgba(0,0,0,.425));
 
     @media (min-width: 768px) {
       height: 100%;
-      max-width: 50%;
+      max-width: 60%;
     }
   }
         .profile {
