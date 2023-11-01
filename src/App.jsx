@@ -67,11 +67,11 @@ function App() {
           <Route path='/' element={<Home audio={playMusic} />} />
           <Route path='/about' element={<About />} />
         </Routes>
-        <div className='scrolling'>
+       {/*  <div className='scrolling'>
           {scrollY > 500
             ? 'Scrolled more than 500px'
             : 'Still somewhere near the top!'}
-        </div>
+        </div> */}
       </Router>
     </main>
   );

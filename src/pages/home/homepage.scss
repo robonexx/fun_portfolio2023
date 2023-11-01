@@ -75,7 +75,7 @@ transition: filter 600ms;
 .clipped-element {
   z-index: 100;
 
-  width: 20rem;
+  max-width: 20rem;
   height: 20rem;
   margin: 0 auto;
   background-color: rgb(236, 110, 177);
