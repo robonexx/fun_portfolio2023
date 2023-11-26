@@ -1,16 +1,17 @@
- 
+
   @font-face {
     font-family: SourcePro;
-    src: url('/src/assets//fonts/SourceSansPro-Regular.otf');
+    src: url('/src/assets/fonts/SourceSansPro-Regular.otf');
   }
 
   @font-face {
     font-family: PriceDown;
-    src: url('/src/assets//fonts/pricedown.otf');
+    src: url('/src/assets/fonts/pricedown.otf');
   }
 
   $font-base: SourcePro;
   $font-headline: PriceDown;
+  $font-alt: SourcePro;
 
   // used this as example https://ux.stackexchange.com/questions/126390/font-scaling-from-desktop-to-mobile
 
@@ -22,7 +23,7 @@ $font-size-ml: clamp(1.25rem, 0.9688rem + 0.75vw, 1.5rem); // h4
 $font-size-l: clamp(1.375rem, 0.9063rem + 1.5vw, 1.75rem); // h3
 $font-size-xl: clamp(2.225rem, 0.8438rem + 3vw, 3.25rem); // h2
 $font-size-xxl: clamp(3rem, 0.75rem + 7vw, 6rem); // h1
-$font-size-xxxl: clamp(8rem, 0.9063rem + 15vw, 25rem);
+$font-size-xxxl: clamp(5rem, 0.8063rem + 8vw, 10rem);
 
 // font weight
 $font-normal: 400;

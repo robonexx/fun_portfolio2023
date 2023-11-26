@@ -1,3 +1,4 @@
+import {motion} from 'framer-motion'
 import './talkbubble.scss';
 import TypeWriter from '../typewriter/TypeWriter';
 // eslint-disable-next-line react/prop-types

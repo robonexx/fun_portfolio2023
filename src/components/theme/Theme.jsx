@@ -1,15 +1,17 @@
-import { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import styles from './theme.module.scss';
+import { ThemeContext } from '../../App';
 
 // eslint-disable-next-line react/prop-types
-export default function Theme({ lights, setLights }) {
+export default function Theme() {
+  const [darkTheme, setDarkTheme] = useContext(ThemeContext);
   const controls = useAnimation();
   const themeRef = useRef();
 
   const toggleLights = (e) => {
     e.stopPropagation();
-    setLights((prev) => !prev);
+    setDarkTheme((prev) => !prev);
   };
 
   useEffect(() => {
@@ -34,8 +36,8 @@ export default function Theme({ lights, setLights }) {
   }, []);
 
   useEffect(() => {
-    controls.start({ x: lights ? 1 : 0 });
-  }, [lights, controls]);
+    controls.start({ x: darkTheme ? 1 : 0 });
+  }, [darkTheme, controls]);
 
   return (
     <motion.div className={styles.theme} ref={themeRef}>
@@ -53,7 +55,7 @@ export default function Theme({ lights, setLights }) {
               cy='285'
               rx='292.5'
               ry='268'
-              fill={lights ? '#d3b92449' : '#14131371'}
+              fill={!darkTheme ? '#d3b92494' : '#14131371'}
             />
             <path
               d='M275.283 184.226C275.283 178.626 275.283 175.826 276.373 173.687C277.332 171.805 278.861 170.275 280.743 169.316C282.882 168.226 285.682 168.226 291.283 168.226H291.887C297.487 168.226 300.288 168.226 302.427 169.316C304.308 170.275 305.838 171.805 306.797 173.687C307.887 175.826 307.887 178.626 307.887 184.226V187.585H275.283V184.226Z'
@@ -77,7 +79,7 @@ export default function Theme({ lights, setLights }) {
             />
             <defs>
               <radialGradient
-                id={lights ? 'radial' : 'dark'}
+                id={darkTheme ? 'radial' : 'dark'}
                 cx='0'
                 cy='0'
                 r='1'
@@ -92,13 +94,13 @@ export default function Theme({ lights, setLights }) {
           <motion.svg
             onClick={(e) => toggleLights(e)}
             className={styles.light}
-            fill={lights ? '#eeece3' : '#615e5e'}
+            fill={!darkTheme ? '#eee6c2' : '#4b4545'}
             xmlns='http://www.w3.org/2000/svg'
           >
             <motion.path
               d='M103.547 48.7736C103.547 75.2207 80.511 96.6604 52.0943 96.6604C23.6777 96.6604 0.64151 75.2207 0.64151 48.7736C0.64151 22.3264 23.6777 0.88678 52.0943 0.88678C80.511 0.88678 103.547 22.3264 103.547 48.7736Z'
               animate={{
-                d: !lights
+                d: !darkTheme
                   ? 'M104.547 48.7736C110 57 81.511 35 53.0944 35C24.6777 35 -6 59 1.64152 48.7736C1.64152 22.3264 24.6777 0.88678 53.0944 0.88678C81.511 0.88678 104.547 22.3264 104.547 48.7736Z'
                   : 'M103.547 48.7736C103.547 75.2207 80.511 96.6604 52.0943 96.6604C23.6777 96.6604 0.64151 75.2207 0.64151 48.7736C0.64151 22.3264 23.6777 0.88678 52.0943 0.88678C80.511 0.88678 103.547 22.3264 103.547 48.7736Z',
               }}

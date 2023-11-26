@@ -7,9 +7,14 @@ const Box = styled.div`
   display: flex;
   cursor: pointer;
   position: fixed;
-  right: 5vw;
+  left: 5vw;
   top: 20vh;
   z-index: 101;
+
+  @media (min-width: 768px) {
+    left: 2vw;
+  top: 25vh;
+      }
 
   & > *:nth-child(1) {
     animation-delay: 0.2s;

@@ -7,13 +7,12 @@ const phrases = [
   'Terve kaveri',
   'こんにちは',
   'Hola Amigo',
-  'Shoo bre',
   '你好呀... I`m Rob',
   'A Frontend developer based in Stockholm, Sweden',
   'I LIKE CREATING SMART USER INTERFACES & USEFUL INTERACTIONS',
   'RESPONSIVE AND "UP TO DATE" WEBSITES',
   'DEVELOPING RICH WEB EXPERIENCES & APPLICATIONS',
-  'Feel free to check around on my new website 😉',
+  'Feel free to check around on my fun portolio 😉 do U like music? ↖',
 ];
 
 const TypeWriter = () => {

@@ -2,11 +2,13 @@
 
 .hero {
     position: relative;
-    font-family: $font-headline;
+    font-family: $font-alt;
     height: calc(100vh - 5rem);
+    overflow: hidden;
     
   @media screen and (max-width: 768px) {
     height: 100vh;
+    height: calc(100vh - 5rem);
   }
 
   .bgimg {
@@ -16,18 +18,24 @@
     object-fit: cover;
     top: 0;
     left: 0;
+    bottom: 0;
+    right:  0;
     z-index: -1;
     filter: brightness(90%);
   }
 
    h1 {
-    padding-top: 12vh;
+    padding-top: 15vh;
+    padding-left: 10vw;
     text-align: center;
     font-family: $font-headline;
+    font-size: $font-size-xl;
+    letter-spacing: 10px;
     text-shadow: 4px 4px 1px rgb(0, 0, 0);
 
     @media (min-width: 768px) {
       padding-top: 30vh;
+      font-size: $font-size-xxxl;
     }
   }
 
@@ -60,5 +68,16 @@
             position: absolute;
             top: 15vh;
             left: 2rem;
+        }
+
+        .cta {
+          position: absolute;
+          bottom: 15vh;
+          right: 0vw;
+
+          @media (min-width: 768px) {
+            bottom: 20vh;
+          right: 3vw;
+          }
         }
     }      

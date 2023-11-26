@@ -2,13 +2,14 @@
 
 .btn {
   border: none;
-  color: #000;
+  color: #3a3a3a;
   margin: 20px;
   border-radius: 5px;
   padding: 0.75rem 1rem;
-  font-size: $font-size-base;
+  width: fit-content;
+  font-size: $font-size-m;
   font-family: $font-headline;
-  background: $color-c-4;
+  background: $color-c-1;
   border: none;
   z-index: 1;
   cursor: pointer;

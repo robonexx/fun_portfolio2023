@@ -1,9 +1,14 @@
 @use '../../styles/base/' as *;
 .typewriter {
     position: relative;
-    font-size: $font-size-l;
-    color: $color-c-5;
+    font-size: $font-size-xl;
+    color: $color-5;
     font-family: $font-headline;
     letter-spacing: 1px;
+    line-height: 1;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.225);
+
+    @media (min-width: 768px) {
+        font-size: $font-size-l;
+      }
 }

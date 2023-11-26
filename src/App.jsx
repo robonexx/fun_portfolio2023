@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/home/Home';
 import About from './pages/about/About';
@@ -14,10 +14,13 @@ import Theme from './components/theme/Theme';
 import Header from './components/header/Header';
 import SoundBar from './components/_ui/soundbar/SoundBar';
 import SoundVisualizer from './components/_ui/soundvisualizer/SoundVisualizer';
+import Work from './pages/work/Work';
+
+export const ThemeContext = createContext();
 
 function App() {
   const [active, setActive] = useState(false);
-  const [lights, setLights] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(false);
   const [playMusic, setPlayMusic] = useState(false)
 
   const [scrollY, setScrollY] = useState(0);
@@ -37,11 +40,11 @@ function App() {
   }, []);
 
   return (
-    <main className={lights ? 'main lightmode' : 'main darkmode'}>
-      <div className={lights ? 'overlay' : 'overlay dark'}></div>
+    <main className={darkTheme ? 'main lightmode' : 'main darkmode'}>
+      <ThemeContext.Provider value={[darkTheme, setDarkTheme]}>
       <Router>
         <Header />
-        <Theme lights={lights} setLights={setLights} />
+        <Theme />
         <MenuBtn active={active} setActive={setActive} />
         <AnimatePresence mode='wait'>
           {active && (
@@ -66,6 +69,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home audio={playMusic} />} />
           <Route path='/about' element={<About />} />
+          <Route path='/work' element={<Work />} />
         </Routes>
        {/*  <div className='scrolling'>
           {scrollY > 500
@@ -73,6 +77,7 @@ function App() {
             : 'Still somewhere near the top!'}
         </div> */}
       </Router>
+      </ThemeContext.Provider>
     </main>
   );
 }
