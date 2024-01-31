@@ -34,6 +34,7 @@ const Hero = ({ audio }) => {
         className={audio ? 'img addAnimationToImg' : 'img '}
         style={{ filter: darkTheme ? 'brightness(50%)' : 'brightness(100%)' }}
       />
+      
       <div className='cta'>
           <Button title='check my work'/>
       </div>

@@ -1,0 +1,335 @@
+$boombox-background: #404040;
+$boombox-height: 200px;
+$boombox-width: 440px;
+$boombox-border-radius: 10px;
+
+$controls-background: #808080;
+$controls-height: 30px;
+
+$speaker-background: lighten($boombox-background, 5%);
+$speaker-size: 120px;
+$speaker-top-offset: 70px;
+
+.boom-box-wrapper {
+    position: fixed;
+    bottom: 55vh;
+    right: 10rem;
+    z-index: 1000;
+    transform: scale(1);
+    cursor: grab;
+
+    .boombox {
+      background: $boombox-background;
+      background: -webkit-linear-gradient(#000000, #1b1b1b);
+      border-radius: $boombox-border-radius;
+      height: $boombox-height;
+      margin: 0;
+        position: relative;
+      width: $boombox-width;
+      transition: transform 0.4s ease-in-out;
+    
+      &.on {
+        transform: rotate(1deg);
+        animation-name: wobble;
+        animation-duration: 400ms;
+        transform-origin: 70% 70%;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        [class*="speaker"] {
+          transform: scale(1.05);
+          animation-name: speaker-on;
+          animation-duration: 400ms;
+          transform-origin: 70% 70%;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+        }
+    
+        &:after {
+          color: #aef225;
+          text-shadow: 0 0 10px #abf120;
+        }
+    
+        $bar-color: #ffff4a;
+    
+        .bars li {
+          &:nth-child(3) span {
+            animation-delay: 0.8s;
+            background: $bar-color;
+          }
+    
+          &:nth-child(4) span {
+            animation-delay: 0.4s;
+            background: $bar-color;
+          }
+    
+          &:nth-child(5) span {
+            animation-duration: 0.6s;
+            background: $bar-color;
+          }
+    
+          &:nth-child(1) span {
+            animation-delay: 0.3s;
+            background: $bar-color;
+          }
+    
+          &:nth-child(2) span {
+            animation-duration: 0.7s;
+            background: $bar-color;
+          }
+    
+          span {
+            animation: bars 400ms linear infinite alternate;
+          }
+        }
+    
+        .buttons-right {
+          li {
+            background: #a6e22e;
+            box-shadow: 0 0 10px 0 #a6e22e, inset 0 0 0 1px lighten(#a6e22e, 20%);
+    
+            &:hover {
+              background: #a6e22e;
+            }
+          }
+        }
+    
+        .dial {
+          &:before {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    
+      &:after {
+        content: 'BOOMBOX';
+        position: absolute;
+        top: 65px;
+        width: 100%;
+        text-align: center;
+        display: block;
+        font-family: "helvetica neue", arial;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #8f8f8f;
+        text-shadow: 1px 1px 5px rgb(86, 35, 135);
+        font-size: 14px;
+        letter-spacing: 2px;
+        transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+      }
+    
+      [class*="speaker"] {
+        background: $speaker-background;
+        box-shadow: inset 0 0 0 13px #383838, inset 0 0 0 20px #404040;
+        width: $speaker-size;
+        height: $speaker-size;
+        border-radius: 50%;
+        position: absolute;
+        top: $speaker-top-offset - 10px;
+      }
+    
+      .speaker-left {
+        left: 30px;
+      }
+    
+      .speaker-right {
+        right: 30px;
+      }
+    }
+    
+    .handle {
+      position: relative;
+      background: #404040;
+      background: -webkit-linear-gradient(#484747, #292929);
+      height: 15px;
+      width: 90%;
+      top: -40px;
+      left: 5%;
+      border-radius: 6px 6px 0 0;
+    
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        height: 45px;
+        width: 15px;
+        top: 15px;
+        background: #404040;
+        background: -webkit-linear-gradient(#797979, #303030);
+        position: absolute;
+      }
+    
+      &:after {
+        right: 0;
+      }
+    }
+    
+    .controls {
+      background: -webkit-linear-gradient(#CCC, #262626);
+      position: absolute;
+      border-radius: $boombox-border-radius $boombox-border-radius 0 0;
+      top: 0;
+      width: 100%;
+      height: 40px;
+    
+      .dial {
+        width: 24px;
+        height: 24px;
+        box-shadow: inset 0 0 0 2px darken(#191919, 10%);
+        float: left;
+        border-radius: 50%;
+        margin: 8px 0 0 8px;
+        position: relative;
+        background: #CACACA;
+    
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          background: #909090;
+          width: 2px;
+          height: 10px;
+          top: 3px;
+          left: 50%;
+          margin-left: -1px;
+          transform: rotate(-90deg);
+          transform-origin: bottom;
+          transition: transform 0.5s ease-in-out;
+        }
+      }
+    
+      .buttons {
+        float: left;
+        margin: 10px 0 10px 10px;
+      }
+    
+      .buttons-right {
+        float: right;
+        margin: 10px 10px;
+    
+        li {
+          cursor: pointer;
+          transition: background 0.2s ease-in-out;
+          font-family: "helvetica neue", arial;
+          color: rgb(53, 53, 53);
+          background: #606060;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 1px;
+          width: 34px;
+          text-align: center;
+          display: block;
+          text-transform: uppercase;
+    
+          &:hover {
+            background: #707070;
+          }
+        }
+      }
+    
+      ul {
+        list-style-type: none;
+        padding: 0;
+    
+        li {
+          min-width: 14px;
+          margin: 0 0.1rem;
+          height: 20px;
+          width: 15px;
+          background: #808080;
+          border-radius: 3px;
+          display: inline-block;
+    
+          span {
+            border-radius: 3px 0 0 3px;
+          }
+        }
+      }
+    }
+    
+    .tape {
+      width: 80px;
+      height: 50px;
+      background: #CCC;
+      border-radius: 6px;
+      position: absolute;
+      top: 94px;
+      left: 50%;
+      margin-left: -40px;
+    }
+    
+    .bars {
+      float: left;
+      margin: 10px 0 0 143px;
+      padding: 0;
+    
+      li {
+        position: relative;
+        height: 40px;
+        margin: 0;
+        width: 15px;
+        overflow: hidden;
+        padding: 0;
+    
+        span {
+          display: block;
+          width: 15px;
+          position: absolute;
+          border-radius: 3px 0 0 3px;
+          bottom: 0;
+          background: #CCC;
+        }
+      }
+    }
+    
+    @keyframes bars {
+      0% {
+        height: 5px;
+      }
+    
+      100% {
+        height: 22px;
+      }
+    }
+    
+    @keyframes speaker-on {
+      0% {
+        transform: scale(1);
+      }
+      30% {
+        transform: scale(1);
+      }
+      40% {
+        transform: scale(1.08);
+      }
+      50% {
+        transform: scale(1);
+      }
+      60% {
+        transform: scale(1);
+      }
+      70% {
+        transform: scale(1.05);
+      }
+      80% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes wobble {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      20% {
+        -webkit-transform: rotate(1deg);
+      }
+      50% {
+        -webkit-transform: rotate(-1deg);
+      }
+      100% {
+        -webkit-transform: rotate(0deg);
+      }
+    }
+}

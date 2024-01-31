@@ -5,16 +5,19 @@ import music from '../../../assets/audio/mamihello.mp3';
 
 const Box = styled.div`
   display: flex;
+  width: fit-content;
+  height: fit-content;
   cursor: pointer;
   position: fixed;
-  left: 5vw;
-  top: 20vh;
-  z-index: 101;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
 
   @media (min-width: 768px) {
-    left: 2vw;
-  top: 25vh;
-      }
+    right: 12.75rem;
+    bottom: 11rem;
+  }
 
   & > *:nth-child(1) {
     animation-delay: 0.2s;
