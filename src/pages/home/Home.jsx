@@ -9,15 +9,19 @@ export const Home = ({ audio }) => {
   return (
     <div className='home'>
       <Hero audio={audio} />
-      <h1 className='title'>Selected work</h1>
-      <h2>just for testing</h2>
-      <div className='parent'>
-        <div className='clipped-element'></div>
-      </div>
-      <p>
-        I know, what is that? is a bug, or... not a bug, just is... fun right,
-        and wierd 😅
-      </p>
+      <section className='section'>
+        <h1 className='title'>Selected work</h1>
+      </section>
+      <section className='section'>
+        <h2>just for testing</h2>
+        <div className='parent'>
+          <div className='clipped-element'></div>
+        </div>
+        <p>
+          I know, what is that? is a bug, or... not a bug, just is... fun right,
+          and wierd 😅
+        </p>
+      </section>
       <section className='section'>
         <Button title='Check my work' />
       </section>

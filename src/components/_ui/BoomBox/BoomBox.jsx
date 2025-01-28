@@ -2,25 +2,25 @@
 import React, { useState, useRef } from 'react';
 import styles from './BoomBox.module.scss';
 import music from '../../../assets/audio/mamihello.mp3';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const Boombox = ({ playMusic, setPlayMusic }) => {
   const [isOn, setIsOn] = useState(false);
   const audioRef = useRef(null);
 
-    const handleClick = (e) => {
-        e.stopPropagation();
-        /*  setIsOn((prevIsOn) => !prevIsOn); */
-        setPlayMusic((prev) => !prev);
+  const handleClick = (e) => {
+    e.stopPropagation();
+    /*  setIsOn((prevIsOn) => !prevIsOn); */
+    setPlayMusic((prev) => !prev);
 
-        if (!playMusic) {
-            audioRef.current.play();
-        } else {
-            audioRef.current.pause();
-        }
+    if (!playMusic) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
     }
+  };
 
-   /*  if (!isOn) {
+  /*  if (!isOn) {
       audioRef.current.play();
     } else {
       audioRef.current.pause();
@@ -28,11 +28,12 @@ const Boombox = ({ playMusic, setPlayMusic }) => {
   }; */
 
   return (
-      <motion.div className={styles['boom-box-wrapper']}
-          initial={{ x: 800 }}
-          animate={{ x: 0 }}
-          transition={{duration: 0.6, delay: 1}}
-      >
+    <motion.div
+      className={styles['boom-box-wrapper']}
+      initial={{ x: 800 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 2, delay: 1 }}
+    >
       <div className={`${styles.boombox} ${playMusic ? `${styles.on}` : ''}`}>
         <div className={styles.handle}></div>
         <div className={styles.controls}>

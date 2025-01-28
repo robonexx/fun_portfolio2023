@@ -39,13 +39,21 @@
     }
   }
 
+  > h2 {
+    text-shadow: 4px 4px 1px rgb(39, 21, 75);
+    @media (max-width: 768px) {
+      margin-top: 12svh;
+    }
+    
+  }
+
   .img {
     position: absolute;
     object-fit: cover;
     left: 0;
     top: auto;
     bottom: 0;
-    height: 60%;
+    height: 50%;
     max-width: 100%;
     z-index: 1;
     filter: drop-shadow(10px 10px 10px rgba(0,0,0,.425));
@@ -74,6 +82,7 @@
           position: absolute;
           bottom: 55vh;
           right: 0vw;
+          z-index: 10000;
 
           @media (min-width: 768px) {
             bottom: 55vh;

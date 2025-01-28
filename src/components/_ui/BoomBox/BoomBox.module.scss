@@ -18,31 +18,49 @@ $speaker-top-offset: 70px;
     transform: scale(1);
     cursor: grab;
 
+    @media (max-width: 768px) {
+     transform: scale(0.5);
+    }
+
     .boombox {
       background: $boombox-background;
       background: -webkit-linear-gradient(#000000, #1b1b1b);
       border-radius: $boombox-border-radius;
-      height: $boombox-height;
+      height: 200px;
       margin: 0;
         position: relative;
-      width: $boombox-width;
+      width: 440px;
       transition: transform 0.4s ease-in-out;
+
+      @media (max-width: 768px) {
+        transform: scale(0.5);
+       }
     
       &.on {
-        transform: rotate(1deg);
-        animation-name: wobble;
+        transform: rotate(0.1deg);
+       
         animation-duration: 400ms;
         transform-origin: 70% 70%;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
+
+        @media (min-width: 980px) {
+          animation-name: wobble;
+         }
+
+
         [class*="speaker"] {
-          transform: scale(1.05);
+          /* transform: scale(1.05); */
           animation-name: speaker-on;
           animation-duration: 400ms;
           transform-origin: 70% 70%;
           animation-iteration-count: infinite;
           animation-timing-function: linear;
         }
+
+        @media (max-width: 768px) {
+          transform: scale(0.5);
+         }
     
         &:after {
           color: #aef225;
@@ -115,6 +133,7 @@ $speaker-top-offset: 70px;
         font-size: 14px;
         letter-spacing: 2px;
         transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        
       }
     
       [class*="speaker"] {
@@ -318,18 +337,18 @@ $speaker-top-offset: 70px;
       }
     }
     
-    @keyframes wobble {
-      0% {
-        -webkit-transform: rotate(0deg);
+      @keyframes wobble {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        20% {
+          -webkit-transform: rotate(0.01deg);
+        }
+        50% {
+          -webkit-transform: rotate(-0.1deg);
+        }
+        100% {
+          -webkit-transform: rotate(0deg);
+        }
       }
-      20% {
-        -webkit-transform: rotate(1deg);
-      }
-      50% {
-        -webkit-transform: rotate(-1deg);
-      }
-      100% {
-        -webkit-transform: rotate(0deg);
-      }
-    }
 }
