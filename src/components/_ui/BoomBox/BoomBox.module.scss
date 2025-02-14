@@ -20,6 +20,9 @@ $speaker-top-offset: 70px;
 
     @media (max-width: 768px) {
      transform: scale(0.5);
+     right: 0;
+     bottom:10vh;
+     left: 5%;
     }
 
     .boombox {
