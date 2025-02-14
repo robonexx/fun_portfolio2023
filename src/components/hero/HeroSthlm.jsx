@@ -11,7 +11,7 @@ const skyVariants = {
   animate: {
     fill: ['#fac358', '#dd541c', '#c65f58', '#02040e'],
     stroke: '#000000',
-    transition: { duration: 1, ease: 'easeOut' },
+    transition: { duration: 2, ease: 'easeOut' },
   },
 };
 
@@ -21,7 +21,7 @@ const waterVariants = {
   },
   animate: {
     fill: ['#4e68f8', '#0019ab', '#152068', '#090e31'],
-    transition: { duration: 1, ease: 'easeOut' },
+    transition: { duration: 2, ease: 'easeOut' },
   },
 };
 
@@ -31,7 +31,7 @@ const townVariants = {
   },
   animate: {
     fill: ['#624b64', '#402342', '#311733', '#200b22'],
-    transition: { duration: 1, ease: 'easeOut' },
+    transition: { duration: 2, ease: 'easeOut' },
   },
 };
 
@@ -41,7 +41,7 @@ const wallVariants = {
   },
   animate: {
     fill: ['#7c4c3f', '#723f31', '#582a1c', '#140704'],
-    transition: { duration: 1, ease: 'easeOut' },
+    transition: { duration: 2, ease: 'easeOut' },
   },
 };
 
@@ -51,7 +51,7 @@ const bottomSkyVariants = {
   },
   animate: {
     fill: ['#dfa42e', '#c76c18', '#5c2a16', '#050a20'],
-    transition: { duration: 1, ease: 'easeOut' },
+    transition: { duration: 2, ease: 'easeOut' },
   },
 };
 

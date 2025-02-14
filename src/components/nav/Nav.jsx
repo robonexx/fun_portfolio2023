@@ -1,19 +1,21 @@
 import { useCallback } from 'react';
 import NavItem from './NavItem';
 import { navData } from '../../assets/constants/NavData';
+import { motion } from 'framer-motion';
 // styles
 import styles from './nav.module.scss';
 
 // eslint-disable-next-line react/prop-types
 export default function Nav({ active, setActive }) {
-
   const closeMobileMenu = useCallback(() => {
     setActive(false);
   }, [setActive]);
 
   return (
     <>
-      <nav className={`${styles.nav} ${styles.open}${active ? styles.open : ''}`}>
+      <motion.nav
+        className={`${styles.nav} ${styles.open}${active ? styles.open : ''}`}
+      >
         <ul className={`${styles.menu} ${active ? styles.open : ''}`}>
           {navData.map(({ title, path, id, img, i }) => (
             <NavItem
@@ -27,7 +29,7 @@ export default function Nav({ active, setActive }) {
             />
           ))}
         </ul>
-      </nav>
+      </motion.nav>
     </>
   );
 }

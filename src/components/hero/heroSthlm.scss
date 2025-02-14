@@ -2,10 +2,12 @@
     position: absolute;
     top: 0;
     display: block;
-    width: 100%;
+    width: 100svw;
     height: 100vh;
+    background-color: #89b8d8;
 
     svg {
+        margin-top: 10rem;
         width: 100%;
         height: 100vh;
         transform: scale(5) translateX(-5vw);

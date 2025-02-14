@@ -3,7 +3,8 @@
 .hero {
     position: relative;
     font-family: $font-alt;
-    height: calc(100vh - 5rem);
+   /*  height: calc(100vh - 5rem); */
+    height: 100svh;
     overflow: hidden;
     
   @media screen and (max-width: 768px) {
@@ -14,7 +15,7 @@
   .bgimg {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 80%;
     object-fit: cover;
     top: 0;
     left: 0;
@@ -25,7 +26,7 @@
   }
 
    h1 {
-    padding-top: 15vh;
+    padding-top: 17.5vh;
     padding-left: 10vw;
     text-align: center;
     font-family: $font-headline;
@@ -34,7 +35,7 @@
     text-shadow: 4px 4px 1px rgb(0, 0, 0);
 
     @media (min-width: 768px) {
-      padding-top: 30vh;
+      padding-top: 35vh;
       font-size: $font-size-xxxl;
     }
   }
@@ -80,7 +81,7 @@
 
         .cta {
           position: absolute;
-          bottom: 55vh;
+          top: 20vh;
           right: 0vw;
           z-index: 10000;
 
